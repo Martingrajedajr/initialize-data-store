@@ -16,7 +16,7 @@ app.use(express.static('public'));
 // init the data store
 db.defaults({ users: []}).write();
 
-// port initialization
+// port
 let port = process.env.PORT || 3000;
 
 // data parser - used to parse post data
