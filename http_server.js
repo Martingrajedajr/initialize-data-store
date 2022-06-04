@@ -16,6 +16,9 @@ app.use(express.static('public'));
 // init the data store
 db.defaults({ users: []}).write();
 
+// port initialization
+let port = process.env.PORT || 3000;
+
 // data parser - used to parse post data
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -54,6 +57,6 @@ app.post('/add', function(req, res){
 
 // start server
 // -----------------------
-app.listen(3000, function(){
-    console.log('Running on port 3000!')
+app.listen(port, function(){
+    console.log(`Running on port ${port}`)
 })
